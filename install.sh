@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-MAX=${1:-50}
-TIME="${2:-0.02}"
-TL="${3:-}"
-S="${4:-=====}"
-TR="${5:-}"
+MAX=50
+TIME=0.02
+TL=""
+S="====="
+TR=""
 
 function run_command {
     command_name=$1;
