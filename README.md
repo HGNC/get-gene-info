@@ -47,6 +47,14 @@ use please refer to either our
 or using the [info](http://rest.genenames.org/info) REST service command and use any
 columns under "storedFields".
 
+## REQUIREMENTS
+This will only work for macs and linux machines. Git must be installed.
+
+### Mac users
+If you haven't install git or xcode and you initiate a `git clone`, your mac
+may ask you to install xcode. Please install this app and try to `git clone`
+once again.
+
 ## INSTALL
 To install this command line tool, clone this project into your directory of choice:
 ```bash
