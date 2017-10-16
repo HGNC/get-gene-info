@@ -68,6 +68,7 @@ The install script will download all the required modules needed for the script 
 will test the script. Once successfully install you may use the script as described
 above.
 
+### Install video
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=Zrn5l6fTVH0&cc_load_policy=1
 " target="_blank"><img src="http://img.youtube.com/vi/Zrn5l6fTVH0/0.jpg" 
-alt="Install video" width="240" height="180" border="10" /></a>
+alt="Install video" width="480" height="360" border="10" /></a>
