@@ -67,3 +67,7 @@ Once cloned you then need to run the install script:
 The install script will download all the required modules needed for the script and
 will test the script. Once successfully install you may use the script as described
 above.
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=Zrn5l6fTVH0&cc_load_policy=1
+" target="_blank"><img src="http://img.youtube.com/vi/Zrn5l6fTVH0/0.jpg" 
+alt="Install video" width="240" height="180" border="10" /></a>
