@@ -34,6 +34,7 @@ one of the following:
     ncbi               for NCBI gene IDs eg. 673
     hgnc               for HGNC gene IDs eg. HGNC:1097
     ensembl            for ensembl gene IDs eg. ENSG00000157764
+    symbol             for HGNC approved symbol eg. TP53
 
 ### -file
 The path of the txt file that contains a list of gene IDs of the
