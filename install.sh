@@ -21,6 +21,10 @@ function run_command {
 }
 
 function run {
+    if ! [ -x "$(command -v perl)" ]; then
+        echo 'Error: perl is not installed. Cannot install without perl!' >&2
+        exit;
+    fi
     if ! [ -x "$(command -v cpanm)" ]; then
         echo 'Error: cpanm is not installed. Installing...' >&2
         run_command "Install cpanm" eval "curl -L https://cpanmin.us | perl - --sudo App::cpanminus"
