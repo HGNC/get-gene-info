@@ -48,13 +48,14 @@ IDConverter->new()->convert();
     my $type_convert =  {
       ncbi    => 'entrez_id',
       hgnc    => 'hgnc_id',
-      ensembl => 'ensembl_gene_id'
+      ensembl => 'ensembl_gene_id',
+      symbol  => 'symbol'
     };
     my $http = HTTP::Tiny->new();
     my $pm = Parallel::ForkManager->new(10, 'tmp/');
 
     # data structure retrieval and handling
-    $pm ->run_on_finish ( # called BEFORE the first call to start()
+    $pm->run_on_finish ( # called BEFORE the first call to start()
       sub {
         my ($pid, $exit_code, $ident, $exit_signal, $core_dump, $data_structure_reference) = @_;
 
@@ -132,7 +133,8 @@ IDConverter->new()->convert();
     my $dispatch_t =  {
       ncbi    => \&is_ncbi_id,
       hgnc    => \&is_hgnc_id,
-      ensembl => \&is_ensembl_id
+      ensembl => \&is_ensembl_id,
+      symbol => \&is_approved_symbol
     };
     my $line_num = 1;
     open my $fh, '<', $file or die "Cannot read file $file";
@@ -149,6 +151,12 @@ IDConverter->new()->convert();
   sub is_hgnc_id {
     my $id = shift;
     return 0 if($id !~ m/^HGNC:\d+$/);
+    return 1;
+  }
+
+  sub is_approved_symbol {
+    my $id = shift;
+    return 0 if($id !~ m/^[A-Z]{1}[A-Z0-9\-@_]+$/);
     return 1;
   }
 
@@ -213,8 +221,8 @@ IDConverter->new()->convert();
     if(! $type){
       $err .= qq{The argument 'type' is missing\n};
     } else {
-      if($type !~ m/^ncbi|hgnc|ensembl$/){
-        $err .= qq{the argument 'type' must be either 'ncbi', 'hgnc' or 'ensembl'\n};
+      if($type !~ m/^ncbi|hgnc|ensembl|symbol$/){
+        $err .= qq{the argument 'type' must be either 'ncbi', 'hgnc', 'symbol' or 'ensembl'\n};
       }
     }
     return $err;
@@ -266,6 +274,7 @@ The type of gene IDs found within the provided file. Type can be one of the foll
     ncbi               for NCBI gene IDs eg. 673
     hgnc               for HGNC gene IDs eg. HGNC:1097
     ensembl            for ensembl gene IDs eg. ENSG00000157764
+    symbol             for HGNC approved symbol eg. TP53
 
 =item B<-file>
 
