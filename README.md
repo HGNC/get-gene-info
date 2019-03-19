@@ -15,7 +15,7 @@ Options:
                    retrieve the columns specified from the gene report.
 ```
 ## DESCRIPTION
-A perl script which will return JSON objects containing HGNC gene
+A perl script which will return tab separated tabular data containing HGNC gene
 information for each gene ID specified in the user provided file. The
 script utilises the HGNC REST service and allows the user to retrieve
 any data that is displayed within our gene symbol reports.
