@@ -65,8 +65,7 @@ git clone https://github.com/HGNC/get-gene-info.git
 ```
 Once cloned you then need to change into the projects directory and run the install script:
 ```bash
-cd ./get-gene-info
-./install.sh
+cd ./get-gene-info && ./install.sh
 ```
 The install script will download all the required modules needed for the script and
 will test the script. Once successfully install you may use the script as described
