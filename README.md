@@ -51,6 +51,8 @@ columns under "storedFields".
 ## REQUIREMENTS
 This will only work for macs and linux machines. Git must be installed.
 
+This code has been tested on MacOSX 12.4 using both perl 5.16.0 & 5.30.3.
+
 ### Mac users
 If you haven't install git or xcode and you initiate a `git clone`, your mac
 may ask you to install xcode. Please install this app and try to `git clone`
