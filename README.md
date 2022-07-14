@@ -63,8 +63,9 @@ To install this command line tool, clone this project into your directory of cho
 ```bash
 git clone https://github.com/HGNC/get-gene-info.git
 ```
-Once cloned you then need to run the install script:
+Once cloned you then need to change into the projects directory and run the install script:
 ```bash
+cd ./get-gene-info
 ./install.sh
 ```
 The install script will download all the required modules needed for the script and
